@@ -7,15 +7,15 @@ A script that generates USEMARCON Loop Up Table -files from Excel spreadsheets. 
 
 DEPENDENCIES
 
-Perl, Spreadsheet::Read, Spreadsheet::XLSX
+Perl, modules: Spreadsheet::Read, Spreadsheet::XLSX (if using xlsx-format), Spreadsheet::ReadSXC (for OpenOffice-/LibreOffice-format)
 
 USAGE
 
-Fill in the value pairs into a spreadsheet columns. Save the file in xlsx-format. Edit the preferred settings into the script (input-/output-filenames, cells to read etc.). Run the script without arguments.
+Fill in the value pairs into a spreadsheet columns. Save the file. Edit the preferred settings into the script (input-/output-filenames, cells to read etc.). Run the script without arguments.
 
 AUTHOR
 
-Tuomo Virolainen (<tuomo.virolainen@helsinki.fi>)
+Tuomo Virolainen <<tuomo.virolainen@helsinki.fi>>
 
 COPYRIGHT AND LICENCE
 
