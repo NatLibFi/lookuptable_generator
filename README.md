@@ -15,7 +15,7 @@ Fill in the value pairs into a spreadsheet columns. Save the file. Edit the pref
 
 AUTHOR
 
-Tuomo Virolainen <<tuomo.virolainen@helsinki.fi>>
+Tuomo Virolainen <<tuomo.virolainen @ helsinki.fi>>
 
 COPYRIGHT AND LICENCE
 
