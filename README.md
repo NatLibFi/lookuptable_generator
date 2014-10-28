@@ -14,11 +14,3 @@ DEPENDENCIES
 USAGE
 
 Fill in the value pairs into a spreadsheet columns. Save the file. Edit the preferred settings into the script (input-/output-filenames, cells to read etc.). Run the script without arguments.
-
-AUTHOR
-
-Tuomo Virolainen
-
-COPYRIGHT
-
-Copyright (C) 2014 by The National Library of Finland
