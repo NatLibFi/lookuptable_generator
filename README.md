@@ -7,7 +7,7 @@ A script that generates USEMARCON Loop Up Table -files from Excel spreadsheets. 
 
 DEPENDENCIES
 
-Perl, Spreadsheet::Read -module
+Perl, Spreadsheet::Read -module, Excel-parser such as Spreadsheet::XLSX
 
 USAGE
 
