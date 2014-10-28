@@ -15,7 +15,7 @@ Fill in the value pairs into a spreadsheet columns. Save the file in xlsx-format
 
 AUTHOR
 
-Tuomo Virolainen <tuomo.virolainen@helsinki.fi>
+Tuomo Virolainen (<tuomo.virolainen@helsinki.fi>)
 
 COPYRIGHT AND LICENCE
 
