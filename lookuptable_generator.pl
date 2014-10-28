@@ -9,9 +9,8 @@
 # Copyright: 2014 Tuomo Virolainen, The National Library of Finland
 
 use strict;
-use Spreadsheet::Read;
 use utf8;
-use IO::Handle;
+use Spreadsheet::Read;
 binmode(STDOUT, ':utf8');
 my $timestamp = "File generated: ". localtime . "\n\n";
 
@@ -75,6 +74,10 @@ for (sort keys %valuepairs)
 }
 
 print OUTPUT "# DEFAULT\t| " . $default_value;
+
+close (OUTPUT);
+my $items = keys %valuepairs;
+print "Done, $items value pairs written into $outputfile.\n";
 
 # This subroutine parses data into the required format: an extra whitespace is added between characters, 
 # whitespaces and non-latin characters are replaced by their hexadecimal counterparts.
@@ -141,7 +144,3 @@ sub parse_data
 	}
 	return $parsed_data;
 }
-
-close (OUTPUT);
-my $items = keys %valuepairs;
-print "Done, $items value pairs written into $outputfile.\n";
