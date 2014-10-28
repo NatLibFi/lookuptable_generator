@@ -3,11 +3,11 @@ Look Up Table -generator 0.1
 
 DESCRIPTION
 
-A script that generates USEMARCON Loop Up Table -files from Excel spreadsheets. This tool is best suited for parsing large amounts of value pairs such as lists of term translations. Note that, at the moment, the program translates only whitespaces and the most common Scandinavian characters into hex codes, as required by USEMARCON. See e.g. http://www.nationallibrary.fi/libraries/format/usemarcon.html for details on the USEMARCON software.
+A script that generates USEMARCON Loop Up Table -files from Excel spreadsheets. This tool is best suited for parsing large amounts of value pairs such as lists of term translations. Note that at the moment, the program only translates whitespaces and the most common Scandinavian characters into hex codes, as required by USEMARCON. See e.g. http://www.nationallibrary.fi/libraries/format/usemarcon.html for details on the USEMARCON software.
 
 DEPENDENCIES
 
-Perl, Spreadsheet::Read -module, Excel-parser such as Spreadsheet::XLSX
+Perl, Spreadsheet::Read, Spreadsheet::XLSX
 
 USAGE
 
