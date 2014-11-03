@@ -5,8 +5,6 @@
 # Version: 0.1
 # Created:
 # 17.10.2014
-#
-# Copyright: 2014 Tuomo Virolainen, The National Library of Finland
 
 use strict;
 use utf8;
@@ -17,9 +15,9 @@ my $timestamp = "File generated: ". localtime . "\n\n";
 #########################################################################
 # Fill in required specifications here.
 my $inputfile = ReadData ("relators.xlsx") || die $!;
-my $outputfile = "sv_Funktiot.tbl";
-my $preamble = "Funktiot.tbl -- MARC 21 på svenska >> MARC 21 tekijän funktiot 1xx/6xx/7xx osakenttä e";
-my $default_value = "COPY";
+my $outputfile = "sv_Funktiot.tbl"; # An example
+my $preamble = "Funktiot.tbl -- MARC 21 på svenska >> MARC 21 tekijän funktiot 1xx/6xx/7xx osakenttä e"; # An example
+my $default_value = "COPY"; # Default value to print to output if input value is not found.
 
 my $sheet = "1";
 my $inputvalue_firstcell = "K11";
@@ -144,3 +142,7 @@ sub parse_data
 	}
 	return $parsed_data;
 }
+
+# Copyright (c) 2014 The National Library Of Finland
+# 
+# This program is free software; you can redistribute it and/or modify it under the terms of either: a) the GNU General Public License as published by the Free Software Foundation; either version 1 (https://www.gnu.org/licenses/old-licenses/gpl-1.0.txt), or (at your option) any later version http://www.fsf.org/licenses/licenses.html#GNUGPL), or b) the "Artistic License" (http://dev.perl.org/licenses/artistic.html).
