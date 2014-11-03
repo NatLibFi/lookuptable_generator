@@ -5,6 +5,12 @@
 # Version: 0.1
 # Created:
 # 17.10.2014
+# 
+# Copyright (c) 2014 The National Library Of Finland
+# 
+# This program is free software; you can redistribute it and/or modify it under the terms of either: 
+# a) the GNU General Public License as published by the Free Software Foundation; either version 1 (https://www.gnu.org/licenses/old-licenses/gpl-1.0.txt), or (at your option) any later version http://www.fsf.org/licenses/licenses.html#GNUGPL), or 
+# b) the "Artistic License" (http://dev.perl.org/licenses/artistic.html).
 
 use strict;
 use utf8;
@@ -142,9 +148,3 @@ sub parse_data
 	}
 	return $parsed_data;
 }
-
-# Copyright (c) 2014 The National Library Of Finland
-# 
-# This program is free software; you can redistribute it and/or modify it under the terms of either: 
-# a) the GNU General Public License as published by the Free Software Foundation; either version 1 (https://www.gnu.org/licenses/old-licenses/gpl-1.0.txt), or (at your option) any later version http://www.fsf.org/licenses/licenses.html#GNUGPL), or 
-# b) the "Artistic License" (http://dev.perl.org/licenses/artistic.html).
