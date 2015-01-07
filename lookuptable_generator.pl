@@ -21,16 +21,16 @@ my $timestamp = "File generated: ". localtime . "\n\n";
 
 #########################################################################
 # Fill in required specifications here.
-my $inputfile = ReadData ("relators.xlsx") || die $!;
-my $outputfile = "sv_Funktiot.tbl"; # An example
-my $preamble = "Funktiot.tbl -- MARC 21 på svenska >> MARC 21 tekijän funktiot 1xx/6xx/7xx osakenttä e"; # An example
+my $inputfile = ReadData ("0-alueentermit.xlsx") || die $!;
+my $outputfile = "sv_Sisaltotyypit.tbl"; # An example
+my $preamble = "sv_Sisaltotyypit.tbl -- BookWhere-konversio >> 336-kentän sisältötyypit englannista ruotsiin"; # An example
 my $default_value = "COPY"; # COPY copies input value to output as is, if value is not found in Look Up Table
 
 my $sheet = "1";
-my $inputvalue_firstcell = "K11";
-my $inputvalue_lastcell = "K140";
-my $outputvalue_firstcell = "M11";
-my $outputvalue_lastcell = "M140";
+my $inputvalue_firstcell = "I49";
+my $inputvalue_lastcell = "I74";
+my $outputvalue_firstcell = "E49";
+my $outputvalue_lastcell = "E74";
 
 #########################################################################
 
@@ -78,7 +78,7 @@ for (sort keys %valuepairs)
 	print OUTPUT &parse_data($valuepairs{$_}) . "\n";
 }
 
-print OUTPUT "# DEFAULT\t| " . $default_value;
+print OUTPUT "#DEFAULT\t| " . $default_value;
 
 close (OUTPUT);
 my $items = keys %valuepairs;
