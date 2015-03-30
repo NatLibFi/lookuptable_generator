@@ -64,9 +64,9 @@ for (my $row = $firstrow; $row <= $lastrow; $row++)
 	} 	
 	else
 	{
-		utf8::decode($inputcell_content);  # Avoid splitting composed characters in two
+		# Avoid splitting composed characters in two
+		utf8::decode($inputcell_content);
 		utf8::decode($outputcell_content);
-		#print $inputcell_content . " => " . $outputcell_content . "\n";
 		$valuepairs{$inputcell_content} = $outputcell_content;
 	}
 }
@@ -77,8 +77,6 @@ print OUTPUT ($preamble . $timestamp);
 
 for (sort keys %valuepairs)
 {
-	#utf8::decode($_);
-	#utf8::decode($valuepairs{$_});
 	print OUTPUT &parse_data($_) . "\t| ";
 	print OUTPUT &parse_data($valuepairs{$_}) . "\n";
 }
