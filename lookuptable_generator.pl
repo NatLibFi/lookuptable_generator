@@ -2,9 +2,11 @@
 #
 # This script generates USEMARCON Look Up Tables (*.tbl format) from Excel spreadsheets.
 #
-# Version: 0.1
+# Version: 1.0
 # Created:
 # 17.10.2014
+# Updated:
+# 30.3.2015
 # 
 # Copyright (c) 2014 The National Library Of Finland
 # 
@@ -21,16 +23,16 @@ my $timestamp = "File generated: ". localtime . "\n\n";
 
 #########################################################################
 # Fill in required specifications here.
-my $inputfile = ReadData ("0-alueentermit.xlsx") || die $!;
-my $outputfile = "sv_Sisaltotyypit.tbl"; # An example
-my $preamble = "sv_Sisaltotyypit.tbl -- BookWhere-konversio >> 336-kentän sisältötyypit englannista ruotsiin"; # An example
+my $inputfile = ReadData ("RDAkonversiosuunnitelma.xlsx") || die $!;
+my $outputfile = "RDA_funktiot.tbl"; # An example
+my $preamble = "RDA_funktiot.tbl -- RDA-funktiotermien lyhenteiden avaus"; # An example
 my $default_value = "COPY"; # COPY copies input value to output as is, if value is not found in Look Up Table
 
-my $sheet = "1";
-my $inputvalue_firstcell = "I49";
-my $inputvalue_lastcell = "I74";
-my $outputvalue_firstcell = "E49";
-my $outputvalue_lastcell = "E74";
+my $sheet = "2";
+my $inputvalue_firstcell = "A20";
+my $inputvalue_lastcell = "A227";
+my $outputvalue_firstcell = "G20";
+my $outputvalue_lastcell = "G227";
 
 #########################################################################
 
@@ -60,8 +62,11 @@ for (my $row = $firstrow; $row <= $lastrow; $row++)
 	{
 		next;
 	} 	
-	else 
-	{ 
+	else
+	{
+		utf8::decode($inputcell_content);  # Avoid splitting composed characters in two
+		utf8::decode($outputcell_content);
+		#print $inputcell_content . " => " . $outputcell_content . "\n";
 		$valuepairs{$inputcell_content} = $outputcell_content;
 	}
 }
@@ -72,8 +77,8 @@ print OUTPUT ($preamble . $timestamp);
 
 for (sort keys %valuepairs)
 {
-	utf8::decode($_); # Avoid splitting composed characters in two
-	utf8::decode($valuepairs{$_});
+	#utf8::decode($_);
+	#utf8::decode($valuepairs{$_});
 	print OUTPUT &parse_data($_) . "\t| ";
 	print OUTPUT &parse_data($valuepairs{$_}) . "\n";
 }
