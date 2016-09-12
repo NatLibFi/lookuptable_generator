@@ -1,16 +1,52 @@
-Look Up Table -generator 1.0
------------------------------
+# Look Up Table -generator 2.0
 
-DESCRIPTION
+A script that generates USEMARCON Look Up Table -files from Excel spreadsheets. This tool is best suited for parsing large amounts of value pairs such as lists of term translations.
 
-A script that generates USEMARCON Look Up Table -files from Excel spreadsheets. This tool is best suited for parsing large amounts of value pairs such as lists of term translations. Note that, at the moment, the program only translates whitespaces and the most common Scandinavian characters into hex codes, as required by USEMARCON. See e.g. [USEMARCON description page](http://www.nationallibrary.fi/libraries/format/usemarcon.html) for details on the software.
+## Dependencies
 
-DEPENDENCIES
-- Perl
-- Spreadsheet::Read
-- Spreadsheet::XLSX (for xlsx-format)
-- Spreadsheet::ReadSXC (for OpenOffice-/LibreOffice-format)
+- Java
+- [Leiningen](http://leiningen.org/)
 
-USAGE
+## Installation
 
-Fill in the value pairs into spreadsheet columns. Save the file. Edit the preferred settings into the script (input-/output-filenames, cells to read etc.). Run the script without arguments.
+First clone the repository:
+
+  $ git clone https://github.com/NatLibFi/lookuptable_generator
+
+Then (optionally) compile:
+
+  $ lein uberjar
+
+## Usage
+
+Place your input sheet into ./data. Edit settings into config.edn, then:
+
+    $ java -jar target/uberjar/lookuptable-generate-2.0.0-standalone.jar
+
+Or, using Leiningen:
+
+    $ lein run
+
+
+## Examples
+
+An example config.edn:
+
+```clojure
+{:file "./data/example.xlsx"
+ :outputfilename "outputfile.tbl"
+ :preamble "First line in the output file (a description or title)"
+ :sheet "first_sheet"
+ :in-column :A
+ :out-column :B
+ :title-rows 1 ; Rows to skip before the data proper
+ :use-default true ; If a default value is used
+ :default "COPY"}
+
+```
+
+## License
+
+Copyright © 2014-2016 University of Helsinki (The National Library of Finland)
+
+Distributed under the Eclipse Public License version 1.0.

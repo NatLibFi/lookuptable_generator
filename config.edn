@@ -1,0 +1,9 @@
+{:file "./data/example.xlsx"
+ :outputfilename "outputfile.tbl"
+ :preamble "First line in the output file (a description or title)"
+ :sheet "first_sheet"
+ :in-column :A
+ :out-column :B
+ :title-rows 1 ; Rows to skip before the data proper
+ :use-default true ; If a default value is used
+ :default "COPY"}
