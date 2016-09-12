@@ -11,11 +11,11 @@ A script that generates USEMARCON Look Up Table -files from Excel spreadsheets. 
 
 First clone the repository:
 
-  $ git clone https://github.com/NatLibFi/lookuptable_generator
+    $ git clone https://github.com/NatLibFi/lookuptable_generator
 
 Then (optionally) compile:
 
-  $ lein uberjar
+    $ lein uberjar
 
 ## Usage
 
