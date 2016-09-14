@@ -1,0 +1,27 @@
+exit
+exut
+exit
+(l/local-now)
+(l/to-local-date-time obj)
+(l/to-local-date-time (l/local-now)))
+(l/to-local-date-time (l/local-now))
+(l/format-local-time (l/local-now) :basic-date-time)
+(f/show-formatters)
+((f/formatters :mysql) (l/local-now))
+(def now (l/local-now))
+now
+(def format (f/formatters :mysql))
+(def form (f/formatters :mysql))
+(form now)
+now
+form
+(now form)
+(f/parse from now)
+(f/parse form now)
+now
+(f/parse from "20100311")
+(f/parse form "20100311")
+(f/parse form now)
+(f/unparse form now)
+(get-timestamp)
+(-main)

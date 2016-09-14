@@ -1,7 +1,9 @@
 (ns lookuptable-generate.core
   (:require [clojure.string :as string]
             [clojure.edn :as edn]
-            [dk.ative.docjure.spreadsheet :as sheet])
+            [dk.ative.docjure.spreadsheet :as sheet]
+            [clj-time.format :as f]
+            [clj-time.local :as l])
   (:gen-class))
 
 (defn hexify [string]
@@ -29,10 +31,14 @@
 (defn load-config [file]
   (edn/read-string (slurp file)))
 
+(defn get-timestamp []
+  (f/unparse (f/formatters :mysql) (l/local-now)))
+
 (defn -main [& args]
   (let [config (load-config "config.edn") data (load-sheet config)]
-    (let [parsed (str (:outputfilename config) "\n" 
-                      (:preamble config) "\n\n" 
+    (let [parsed (str (:outputfilename config) " -- "
+                      (:preamble config) "\n"
+                      "File generated: " (get-timestamp) "\n\n"
                       (string/join "\n" (map process-line data))
                       (if (:use-default config) (str "\n#DEFAULT\t|\t" (:default config) "\n")))]
       (do (spit (:outputfilename config) parsed)

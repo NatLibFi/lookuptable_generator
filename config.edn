@@ -1,6 +1,6 @@
 {:file "./data/example.xlsx"
  :outputfilename "outputfile.tbl"
- :preamble "First line in the output file (a description or title)"
+ :preamble "A short description"
  :sheet "first_sheet"
  :in-column :A
  :out-column :B

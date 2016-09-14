@@ -3,7 +3,8 @@
   :license {:name "Eclipse Public License"
             :url "http://www.eclipse.org/legal/epl-v10.html"}
   :dependencies [[org.clojure/clojure "1.8.0"]
-                 [dk.ative/docjure "1.10.0"]]
+                 [dk.ative/docjure "1.10.0"]
+                 [clj-time "0.12.0"]]
   :main ^:skip-aot lookuptable-generate.core
   :target-path "target/%s"
   :profiles {:uberjar {:aot :all}})
